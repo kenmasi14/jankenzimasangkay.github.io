@@ -707,11 +707,11 @@ footer{
 @media  (max-width:991px){
     .column{
         width: 100%;
-        padding-top: 96px;
     }
     #wrapper{
         text-align: center;
-        display: block !important;
+        display: flex;
+        flex-direction: column;
         width: 100%;
 
     }
@@ -726,13 +726,14 @@ footer{
     
     }
     .cuShape{
-        top: 1rem;
+        top: 15rem;
     }
     .profile{
         position:inherit;
         padding-top: 0rem !important;
-        margin-top: -6rem;
+        margin-top: 2rem;
         height: 52vh;
+        border-radius: 60%;
 
     }
     .lowerLine{
@@ -776,6 +777,15 @@ footer{
     .column .btnClass{
         justify-content: center !important;
         align-self: center !important;
+    }
+    #wrapper .userImage1{
+        order: 1;
+    }
+    #wrapper .introduceFirst{
+        order: 2;
+    }
+    .resNav li a{
+        color: white;
     }
 
 }
