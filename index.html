@@ -25,7 +25,7 @@
             </ul>
             <div class="links">
                 <a href="https://www.facebook.com/PhilTryceLucas" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/jan-kenzi-masangkay-432bba145/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/jan-kenzi-masangkay-72b98228a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <div class="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
@@ -49,7 +49,7 @@
                 </ul>
                 <div class="btnClass gap-3 text-center align-items-center justify-content-start">
                     <button class="btn btn-primary">
-                       <a class="text-white text-decoration-none" href="./files/jan kenzi masangkay cv.pdf" target="_blank">Download CV</a>
+                       <a class="text-white text-decoration-none" href="./files/janKenziMasangkayNewResume.pdf" target="_blank">Download CV</a>
                     </button>
                 <button class="btn btn-success abt d-none d-lg-flex d-xl-flex d-xxl-flex align-items-center text-center justify-content-center"><a href="#abtPage" style="text-decoration: none; color: white;">About me</a></button>
                 </div>
@@ -84,13 +84,13 @@
                     
                 </div>
                 <div class="linkLogo">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/PhilTryceLucas"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/jan-kenzi-masangkay-72b98228a/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
                 <div class="dataAbout">
                     <h1>If debugging is the process of removing bugs, then programming must be the process of putting them in. – Sam Redwine</h1>
                     <div class="btnClass">
-                        <button class="btn btn-primary"><a class="text-white text-decoration-none" href="./files/jan kenzi masangkay cv.pdf" target="_blank">Download CV</a></button>
+                        <button class="btn btn-primary"><a class="text-white text-decoration-none" href="./files/janKenziMasangkayNewResume.pdf" target="_blank">Download CV</a></button>
                     </div>
                 </div>
             </div>
@@ -286,22 +286,23 @@
             <div class="contactForm">
                 <form id="contactForm">
                     <div class="nameInput">
-                        <input type="text" name="first_name" id="first_name" placeholder="First Name">
-                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
                     </div>
                     <div class="emailInput">
-                        <input type="email" name="email" placeholder="Input Email">
+                        <input type="email" name="email" placeholder="Input Email" required>
                     </div>
                     <div class="phoneInput">
-                        <input type="number" name="phone" placeholder="Input Phone Number">
+                        <input type="number" name="phone" placeholder="Input Phone Number" required>
                     </div>
                     <div class="messageArea">
-                        <textarea name="message" id="" cols="30" rows="10" placeholder="Write a Message"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Write a Message" required></textarea>
                     </div>
                     <div class="sendBtn">
                         <div class="btn btn-success" onclick="sendEmail()">
                             Send
                         </div>
+                        <div id="messageAlert" class="message"></div>
                     </div>
                 </form>
             </div>
@@ -317,21 +318,53 @@
         </div>
     </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        function displayMessage(message, type) {
+            let messageElement = document.getElementById("messageAlert");
+            messageElement.textContent = message;
+            messageElement.classList.remove("success", "error");
+            messageElement.classList.add(type);
+            messageElement.style.visibility = "visible";
+    
+            setTimeout(function () {
+                messageElement.style.visibility = "hidden";
+            }, 5000);
+        }
+    </script>
     <script type="text/javascript">
         emailjs.init("JH_etavMQnxDVAwtY");
       
         function sendEmail() {
-         let formElement = document.getElementById("contactForm");
-          console.log(document.getElementById("contactForm"))
-      
-          emailjs.sendForm("service_i90vv2a", "template_01iut1y", formElement)
-            .then(function(response) {
-              console.log("Email sent successfully", response);
+        let formElement = document.getElementById("contactForm");
+        let messageElement = document.getElementById("messageAlert");
 
-            }, function(error) {
-              console.error("Error sending email", error);
-            });
-        }
+    // Check if the form is valid
+        if (formElement.checkValidity()) {
+            emailjs.sendForm("service_i90vv2a", "template_01iut1y", formElement)
+                .then(function (response) {
+                    console.log("Email sent successfully", response);
+                    displayMessage("Message sent successfully!", "success", messageElement);
+                    formElement.reset();
+                }, function (error) {
+                    console.error("Error sending email", error);
+                    displayMessage("Error sending message. Please try again later.", "error", messageElement);
+                });
+        } else {
+                    displayMessage("Please fill in all required fields.", "error", messageElement);
+                }
+        }       
+
+        function displaySuccessMessage() {
+        // Customize this function to show a success message to the user
+        alert('Message sent successfully!');
+        // You can also reset the form or redirect the user to a thank you page
+        document.getElementById('contactForm').reset();
+    }
+
+    function displayErrorMessage() {
+        // Customize this function to show an error message to the user
+        alert('Error sending message. Please try again later.');
+    }
     </script>
 
     <!-- Add jQuery -->

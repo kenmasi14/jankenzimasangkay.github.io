@@ -736,6 +736,24 @@ footer{
     display: flex;
 }
 
+
+.messageAlert {
+    visibility: hidden;
+    margin-top: 10px;
+    padding: 10px;
+    transition: visibility 0.5s ease-in-out;
+}
+
+.success {
+    color: #4CAF50;
+    background-color: #dff0d8;
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
 /* <----Responsive site----> */
 
 @media  (max-width:991px){
