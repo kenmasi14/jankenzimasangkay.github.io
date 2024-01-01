@@ -707,11 +707,8 @@ footer{
     display: none;
 }
 
-.navItems.mobile-menu {
-    display: none;
-}
-
 .mobile-menu {
+    display: none;
     list-style: none;
     padding: 0;
     display: flex;
