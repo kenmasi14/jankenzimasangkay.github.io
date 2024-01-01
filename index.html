@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="container-fluid">
+        
         <nav>
             <div class="logo">
                 JK <span style="color: #0FC2C0;">M</span>.
@@ -26,6 +27,15 @@
                 <a href="https://www.facebook.com/PhilTryceLucas" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.linkedin.com/in/jan-kenzi-masangkay-432bba145/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="navItems mobile-menu d-lg-none d-xl-none d-xxl-none">
+                <li><a href="#wrapper">Home</a></li>
+                <li><a href="#abtPage">About</a></li>
+                <li><a href="#servicesPage">Services</a></li>
+                <li><a href="#contactSection">Contact</a></li>
+            </ul>
         </nav>
         <div id="wrapper">
             <div class="column col introduceFirst">
@@ -59,7 +69,7 @@
     </div>
     <section id="abtPage">
         <h1 class="abtHeader">
-            aABOUT ME
+            ABOUT ME
         </h1>
         <div class="newWrapper">
             <div class="aboutContent col3">
@@ -323,6 +333,21 @@
             });
         }
     </script>
+
+    <!-- Add jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Your existing HTML code with the menu-toggle div and mobile-menu ul -->
+
+<script>
+    $(document).ready(function () {
+        $(".menu-toggle").click(function () {
+            $(".mobile-menu").slideToggle();
+        });
+    });
+</script>
+    
+
     
 </body>
 </html>
