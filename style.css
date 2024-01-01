@@ -457,6 +457,7 @@ hr{
     padding: 40px;
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card{

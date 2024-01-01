@@ -162,6 +162,18 @@
                     </div>
                 </div>
                 <div class="card">
+                    <i class="fa-brands fa-js" style="color: #004dd1;"></i>
+                    <div class="name-container">
+                        <h3>Javascript</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa-brands fa-react" style="color: #004dd1;"></i>
+                    <div class="name-container">
+                        <h3>React.js</h3>
+                    </div>
+                </div>
+                <div class="card">
                     <i class="fa-brands fa-laravel"></i>
                     <div class="name-container">
                         <h3>Laravel</h3>
@@ -262,23 +274,23 @@
             </h1>
         
             <div class="contactForm">
-                <form action="">
+                <form id="contactForm">
                     <div class="nameInput">
-                        <input type="text" name="" id="" placeholder="First Name">
-                        <input type="text" name="" id="" placeholder="Last Name">
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
                     </div>
                     <div class="emailInput">
-                        <input type="email" placeholder="Input Email">
+                        <input type="email" name="email" placeholder="Input Email">
                     </div>
                     <div class="phoneInput">
-                        <input type="number" placeholder="Input Phone Number">
+                        <input type="number" name="phone" placeholder="Input Phone Number">
                     </div>
                     <div class="messageArea">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Write a Message"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Write a Message"></textarea>
                     </div>
                     <div class="sendBtn">
-                        <div class="btn btn-success">
-                            <a href="#">Send</a>
+                        <div class="btn btn-success" onclick="sendEmail()">
+                            Send
                         </div>
                     </div>
                 </form>
@@ -294,5 +306,23 @@
             <h1>KodeGo Student</h1>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("JH_etavMQnxDVAwtY");
+      
+        function sendEmail() {
+         let formElement = document.getElementById("contactForm");
+          console.log(document.getElementById("contactForm"))
+      
+          emailjs.sendForm("service_i90vv2a", "template_01iut1y", formElement)
+            .then(function(response) {
+              console.log("Email sent successfully", response);
+
+            }, function(error) {
+              console.error("Error sending email", error);
+            });
+        }
+    </script>
+    
 </body>
 </html>
