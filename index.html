@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <title>My Portfolio</title>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -129,7 +130,7 @@
             </h1>
             <hr>
             <div class="workData">
-                <h1 class="jobName">IT Staff/Graphic Designer</h1>
+                <h1 class="jobName">IT Programmer/Graphic Designer</h1>
                 <h2 class="companyName">Provincial Disaster Risk Reduction and Management Office</h2>
                 <div class="dateJob">
                     <i class="fa-regular fa-calendar-days"></i>
@@ -206,73 +207,11 @@
         
     </section>
     <section id="servicesPage">
-        <h1 class="abtHeader">WHAT CAN I OFFER</h1>
-        <hr>
-        <div class="servicesGrid">
-            <img src="./assets/4x6.jpg" alt="" srcset="">
-            <div class="descriptServices">
-                <h1>Graphic Designing</h1>
-                <div class="toolsUse">
-                    <span>Photoshop</span>
-                    <span>Illustrator</span>
-                </div>
-                <div class="gridImages">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                </div>
-                <div class="viewMore">
-                    <div class="btn btn-primary mt-2 text-center">View More</div>
-                </div>
-                
-            </div>
+        <h1 class="abtHeader">PROJECTS</h1>
+        <div id="servicesGrid">
+
         </div>
-        
-        <hr>
-        <div class="servicesGrid">
-            <img src="./assets/4x6.jpg" alt="" srcset="">
-            <div class="descriptServices">
-                <h1>Video Editing</h1>
-                <div class="toolsUse">
-                    <span>Premiere Pro</span>
-                    <span>After Effects</span>
-                </div>
-                <div class="gridImages">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                    <img src="./assets/4x6.jpg" alt="" srcset="">
-                </div>
-                <div class="viewMore">
-                    <div class="btn btn-primary mt-2 text-center">View More</div>
-                </div>
-                
-            </div>
-        </div>
-        <hr>
-        <div class="servicesGrid">
-            <img src="./assets/apps.jpg" alt="" srcset="">
-            <div class="descriptServices">
-                <h1>Mobile App</h1>
-                <div class="toolsUse">
-                    <span>Dart</span>
-                    <span>Flutter</span>
-                </div>
-                <div class="gridImages">
-                    <img src="./assets/apps.jpg" alt="" srcset="">
-                    <img src="./assets/apps.jpg" alt="" srcset="">
-                    <img src="./assets/apps.jpg" alt="" srcset="">
-                    <img src="./assets/apps.jpg" alt="" srcset="">
-                    <img src="./assets/apps.jpg" alt="" srcset="">
-                </div>
-                <div class="viewMore">
-                    <div class="btn btn-primary mt-2 text-center">View More</div>
-                </div>
-                
-            </div>
+        <div class="gridImages">
         </div>
 
         
@@ -338,7 +277,6 @@
         let formElement = document.getElementById("contactForm");
         let messageElement = document.getElementById("messageAlert");
 
-    // Check if the form is valid
         if (formElement.checkValidity()) {
             emailjs.sendForm("service_i90vv2a", "template_01iut1y", formElement)
                 .then(function (response) {
@@ -355,22 +293,17 @@
         }       
 
         function displaySuccessMessage() {
-        // Customize this function to show a success message to the user
         alert('Message sent successfully!');
-        // You can also reset the form or redirect the user to a thank you page
         document.getElementById('contactForm').reset();
     }
 
     function displayErrorMessage() {
-        // Customize this function to show an error message to the user
         alert('Error sending message. Please try again later.');
     }
     </script>
 
-    <!-- Add jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- Your existing HTML code with the menu-toggle div and mobile-menu ul -->
 
 <script>
     $(document).ready(function () {

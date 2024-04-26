@@ -484,23 +484,38 @@ hr{
     background-color: #ececec;
     justify-content: center;
     align-items: center;
-    padding: 0 10%;
+    padding: 3% 10%;
     overflow: hidden;
 }
 
-.servicesGrid{
+#servicesGrid{
     display: flex;
     width: 100%;
-    padding: 5% 10%;
+    overflow: hidden;
+    padding-bottom: 10px;
+    
+}
+
+.servicesGrid{
+    overflow: hidden;
+    display: flex;
 }
 
 .servicesGrid img{
-    width: 400px;
-    height: auto;
-    transition: 0.5s;
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
 }
 
-.servicesGrid img:hover{
+#servicesGrid img{
+    width: 100%;
+    max-width: 400px;
+    transition: 0.8s;
+
+}
+
+
+#servicesGrid img:hover{
    transform: scale(1.2);
 }
 
@@ -517,11 +532,11 @@ hr{
 
 .toolsUse span{
     font-size: 20px;
-    background-color: #015958;
     padding: 5px 10px;
     border-radius: 20px;
     color: white;
     font-size: 15px;
+    margin-left: 10px;
 
 }
 .descriptServices h1{
@@ -530,11 +545,15 @@ hr{
 
 .gridImages{
     display: flex;
-    width: 50%;
+    width: 100%;
+    column-gap: 15px;
+
 }
 
 .gridImages img{
-    width: 40%;
+    width: 100%;
+    max-width: 150px;
+    cursor: pointer;
 }
 
 
@@ -754,6 +773,10 @@ footer{
     background-color: #FFD2D2;
 }
 
+.serviceDescript{
+    font-size: clamp(16px, 2vw, 24px);
+}
+
 /* <----Responsive site----> */
 
 @media  (max-width:991px){
@@ -821,10 +844,12 @@ footer{
     .btnClass{
         justify-content: center !important;
     }
-    .servicesGrid{
+    #servicesGrid{
         display: block !important;
         text-align: center;
     }
+
+
 
     .column .btnClass{
         justify-content: center !important;
